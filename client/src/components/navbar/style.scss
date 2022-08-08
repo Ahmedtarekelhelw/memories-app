@@ -1,0 +1,29 @@
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
+  background-color: #fff !important;
+  color: inherit !important;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+.username {
+  text-transform: capitalize;
+}
+
+@media (max-width: 540px) {
+  .nav-toolbar {
+    flex-direction: column;
+    padding: 10px 16px;
+  }
+}
+@media (max-width: 400px) {
+  .nav-stack {
+    flex-direction: column !important;
+    margin-top: 10px;
+  }
+  .username {
+    margin-left: 0 !important;
+  }
+  .btn-logout {
+    margin-left: 0px !important;
+  }
+}

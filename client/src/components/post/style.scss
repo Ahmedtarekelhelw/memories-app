@@ -1,0 +1,60 @@
+.css-1t6e9jv-MuiCardActions-root {
+  justify-content: space-between;
+}
+.css-10d1a0h-MuiButtonBase-root {
+  flex-direction: column;
+  width: 100%;
+}
+
+.card-head {
+  position: relative;
+  width: 100%;
+  height: 150px;
+}
+
+.card-head-stack {
+  position: absolute;
+  top: 16px;
+  width: 100%;
+  color: #fff;
+  padding: 0 15px;
+  z-index: 1;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: #000;
+  opacity: 0.4;
+}
+
+.posts-container {
+  justify-content: flex-start !important;
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.css-46bh2p-MuiCardContent-root {
+  text-align: left;
+  width: 100%;
+}
+
+.css-gepadz-MuiTypography-root {
+  font-size: 2.5rem !important;
+}
+
+.card-btn {
+  line-height: 1 !important;
+}
+.css-bhp9pd-MuiPaper-root-MuiCard-root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

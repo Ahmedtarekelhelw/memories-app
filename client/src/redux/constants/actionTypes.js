@@ -1,0 +1,16 @@
+export const AUTH_START = "AUTH_START";
+export const AUTH_SUCCESS = "AUTH_SUCCESS";
+export const AUTH_FAILURE = "AUTH_FAILURE";
+export const LOGOUT = "LOGOUT";
+export const REFRESH_TOKEN = "REFRESH_TOKEN";
+export const GET_POST = "GET_POST";
+export const GET_POSTS = "GET_POSTS";
+export const CREATE_POST = "CREATE_POST";
+export const DELETE_POST = "DELETE_POST";
+export const UPDATE_POST = "UPDATE_POST";
+export const LIKE_POST = "LIKE_POST";
+export const GET_POST_BY_SEARCH = "GET_POST_BY_SEARCH";
+export const START_LOADING = "START_LOADING";
+export const END_LOADING = "END_LOADING";
+export const COMMENT_POST = "COMMENT_POST";
+export const GET_POSTS_BY_CREATOR = "GET_POSTS_BY_CREATOR";
