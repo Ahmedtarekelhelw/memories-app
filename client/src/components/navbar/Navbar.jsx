@@ -11,9 +11,10 @@ import "./style.scss";
 import { Link, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/actions/auth";
+import { selectUser } from "../../redux/reducers/auth";
 
 const Navbar = () => {
-  const { user } = useSelector((state) => state.auth);
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const location = useLocation();
 
@@ -64,4 +65,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default React.memo(Navbar);

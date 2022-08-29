@@ -12,10 +12,9 @@ const {
 } = require("../controllers/posts");
 const { auth } = require("../middleware/auth");
 
-router.get("/", getPosts);
+router.route("/").get(getPosts).post(auth, createPost);
 router.get("/search", getPostBySearch);
 router.get("/:id", getPost);
-router.post("/", auth, createPost);
 router.delete("/:id", auth, deletePost);
 router.patch("/:id", auth, updatePost);
 router.patch("/:id/likePost", auth, likePost);

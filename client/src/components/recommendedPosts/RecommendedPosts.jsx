@@ -50,4 +50,4 @@ const RecommendedPosts = ({ recommendedPosts }) => {
   );
 };
 
-export default RecommendedPosts;
+export default React.memo(RecommendedPosts);

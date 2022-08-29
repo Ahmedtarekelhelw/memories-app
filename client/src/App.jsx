@@ -10,9 +10,12 @@ import {
 import Auth from "./pages/Auth";
 import Home from "./pages/Home";
 import Navbar from "./components/navbar/Navbar";
-import PostDetails from "./pages/postDetails/PostDetails";
 import { useSelector } from "react-redux";
 import CreatorOrTag from "./pages/CreatorOrTag";
+
+const LazyPostDetails = React.lazy(() =>
+  import("./pages/postDetails/PostDetails")
+);
 
 const renderMultiRoutes = ({ element: Element, paths, ...rest }) =>
   paths.map((path) => (
@@ -36,7 +39,14 @@ const App = () => {
           <Route path="posts" element={<Home />} />
           <Route path="posts/search" element={<Home />} />
 
-          <Route path="posts/:id" element={<PostDetails />} />
+          <Route
+            path="posts/:id"
+            element={
+              <React.Suspense fallback="Loading....">
+                <LazyPostDetails />
+              </React.Suspense>
+            }
+          />
           {renderMultiRoutes({
             paths: ["creators/:name", "tags/:name"],
             element: <CreatorOrTag />,

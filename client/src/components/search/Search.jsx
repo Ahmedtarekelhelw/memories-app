@@ -43,7 +43,7 @@ const Search = ({ searchQuery, tags }) => {
       dispatch(getPosts());
       navigate("/");
     }
-  }, [dispatch, navigate, search]);
+  }, [dispatch, navigate, search.tags, search.title]);
 
   useEffect(() => {
     if (searchQuery || tags) {

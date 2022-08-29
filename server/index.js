@@ -3,13 +3,12 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const express = require("express");
 const cookieParser = require("cookie-parser");
+const corsOptions = require("./config/corsOptions");
+const credentials = require("./middleware/credentials");
 
 const authRoutes = require("./routes/auth");
 const postRoutes = require("./routes/posts");
 const refreshRoute = require("./routes/refresh");
-const { auth } = require("./middleware/auth");
-const credentials = require("./middleware/credentials");
-const corsOptions = require("./config/corsOptions");
 
 //init app
 const app = express();
@@ -23,9 +22,7 @@ app.use(cookieParser());
 app.use(express.json({ limit: "30mb" }));
 
 //routes
-// app.use("/user", userRoutes);
-// app.use(auth);
-app.get("/", auth, (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello To Memeories API");
 });
 

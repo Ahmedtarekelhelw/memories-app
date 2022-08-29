@@ -18,7 +18,6 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { deletePost, likePost } from "../../redux/actions/post";
 import moment from "moment";
-import useApiPrivate from "../../hooks/useApiPrivate";
 
 const Post = ({ post, setEditPostId }) => {
   const navigate = useNavigate();
@@ -128,4 +127,4 @@ const Post = ({ post, setEditPostId }) => {
   );
 };
 
-export default Post;
+export default React.memo(Post);

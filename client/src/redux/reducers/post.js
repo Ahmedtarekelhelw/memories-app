@@ -56,13 +56,20 @@ const postReducer = (state = initState, action) => {
         posts: state.posts.filter((post) => post._id !== action.payload),
       };
     case CREATE_POST:
-      return {
-        ...state,
-        posts: [
-          ...state.posts.filter((post, i) => state.posts.length !== i + 1),
-          action.payload,
-        ],
-      };
+      if (state.posts.length >= 6) {
+        return {
+          ...state,
+          posts: [
+            ...state.posts.filter((post, i) => state.posts.length !== i + 1),
+            action.payload,
+          ],
+        };
+      } else {
+        return {
+          ...state,
+          posts: [...state.posts, action.payload],
+        };
+      }
 
     default:
       return state;

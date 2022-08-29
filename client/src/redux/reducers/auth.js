@@ -40,4 +40,6 @@ const authReducer = (state = initState, action) => {
   }
 };
 
+export const selectUser = (state) => state.auth.user;
+
 export default authReducer;

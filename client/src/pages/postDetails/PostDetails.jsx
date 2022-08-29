@@ -1,16 +1,17 @@
-import React, { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getPost, getPostBySearch } from "../../redux/actions/post";
 import { CircularProgress, Divider, Paper, Typography } from "@mui/material";
 import moment from "moment";
 import Comments from "../../components/comments/Comments";
-import "./style.scss";
 import RecommendedPosts from "../../components/recommendedPosts/RecommendedPosts";
+import "./style.scss";
 
 const PostDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+
   const { post, posts, loading } = useSelector((state) => state.posts);
 
   useEffect(() => {
@@ -18,10 +19,15 @@ const PostDetails = () => {
   }, [id, dispatch]);
 
   useEffect(() => {
-    dispatch(getPostBySearch({ tags: post?.tags }));
-  }, [post, dispatch]);
+    if (post?.tags) {
+      dispatch(getPostBySearch({ tags: post?.tags }));
+    }
+  }, [post?.tags, dispatch]);
 
-  const recommendedPosts = posts.filter((post) => post._id !== id);
+  const recommendedPosts = useMemo(
+    () => posts.filter((post) => post._id !== id),
+    [id, posts]
+  );
 
   if (loading) {
     return (

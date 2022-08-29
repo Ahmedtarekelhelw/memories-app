@@ -34,8 +34,8 @@ export const getPosts = (page) => async (dispatch) => {
 };
 export const updatePost = (id, updatePost) => async (dispatch) => {
   try {
-    const { data } = await api.updatePost(id, updatePost);
-    dispatch({ type: UPDATE_POST, payload: data });
+    const res = await api.updatePost(id, updatePost);
+    dispatch({ type: UPDATE_POST, payload: res?.data });
   } catch (error) {
     console.log(error);
   }
