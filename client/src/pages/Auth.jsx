@@ -80,9 +80,6 @@ const Auth = () => {
       dispatch(
         signup({ ...other, email, password, password2: confirmPassword })
       );
-      // } else if (!signUp  && validEmail) {
-      //   dispatch(login({ email, password }));
-      // }
     } else if (!signUp && validPassword && validEmail) {
       dispatch(login({ email, password }));
     }
