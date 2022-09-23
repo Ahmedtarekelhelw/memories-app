@@ -21,7 +21,7 @@ const Paginator = ({ page }) => {
         <PaginationItem
           {...item}
           components={Link}
-          href={`?page=${item.page}`}
+          href={`/#/posts?page=${item.page}`}
         />
       )}
     ></Pagination>
