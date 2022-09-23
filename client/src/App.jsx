@@ -1,7 +1,7 @@
 import { Container } from "@mui/system";
 import React from "react";
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
   Navigate,
@@ -31,7 +31,7 @@ const ProtectRoute = ({ children }) => {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Container maxWidth="xl">
         <Navbar />
         <Routes>
@@ -61,7 +61,7 @@ const App = () => {
           />
         </Routes>
       </Container>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
