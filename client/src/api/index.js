@@ -3,7 +3,7 @@ import { store } from "..";
 import { refresh as refr } from "../redux/actions/auth";
 
 //main endPoint
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://memories-mern-api.onrender.com";
 
 // tihs for any route not require authorization
 const API = axios.create({
